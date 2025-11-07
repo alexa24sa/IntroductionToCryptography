@@ -90,7 +90,7 @@ void permutada(unsigned char permutacion[8], unsigned char numero_a_permutar, un
 int main()
 {
     unsigned char permutacion[8];
-    unsigned char numero_a_permutar, permutacion_final;
+    unsigned char numero_a_permutar, permutacion_final, i;
     printf("\tPROGRAMA QUE RECIBE PERMUTACIONES\n");
     printf("Inserte el valor de su permutacion a contiuacion conforme lo indica el programa\n");
     funcion_permutacion(permutacion);
@@ -101,7 +101,15 @@ int main()
     
     printf("\nResultado permutado decimal: %hhu\n", permutacion_final);
     printf("Resultado permutado en hexa: %x\n", permutacion_final);
-
+    printf("Resultado permutado en binario: ");
+    for(i=0; i<8; i++){
+        if((permutacion_final & (1 << (7 - i))) == 0){
+             printf("0");
+        }else{
+            printf("1");
+        }
+       
+    }
 
     return 0;
 }
